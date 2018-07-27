@@ -1,7 +1,9 @@
-# elfin-db
+# Elfin Data
 
-This private repository stores repeat protein modules contributed by TJ Brunette, David Baker (singles), and Fabio Parmeggiani (pairs). 
+This private repository serves raw repeat protein atomic models contributed by TJ Brunette, David Baker, and Fabio Parmeggiani. Data processing scripts are also included.
+
+Derived data are publicly served at [elfin-library](https://github.com/joy13975/elfin-library).
 
 The repository should only be accessible to those who have been granted permission from either of the above authors.
 
-The data here are used in the [Elfin](https://github.com/joy13975/elfin) project.
+The data here are used in the main [elfin](https://github.com/joy13975/elfin) project.
