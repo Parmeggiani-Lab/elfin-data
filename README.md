@@ -1,6 +1,6 @@
 # Elfin Data
 
-This private repository serves raw repeat protein atomic models contributed by TJ Brunette, David Baker, and Fabio Parmeggiani. Data processing scripts are also included.
+This private repository serves raw repeat protein atomic models contributed by TJ Brunette, David Baker, and [Fabio Parmeggiani](https://github.com/parmef).
 
 Derived data are publicly served at [elfin-library](https://github.com/joy13975/elfin-library).
 
