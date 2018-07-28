@@ -1,5 +1,7 @@
 .DS_Store
 
-pdb_prepped*
-pdb_aligned*
-obj_aligned*
+/pdb_raw/
+/pdb_prepped/
+/pdb_relaxed/
+/pdb_aligned/
+/obj_aligned/
