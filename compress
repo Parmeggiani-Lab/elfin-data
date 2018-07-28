@@ -1,0 +1,11 @@
+#!/bin/bash
+
+dirs=(pdb_raw pdb_relaxed)
+for dir in "${dirs[@]}"
+do
+    base=$(basename "$dir")
+    echo "Compressing $dir"
+    tar -cjSf "${base}.tar.bz2" "$dir"
+done
+
+echo "Done."
