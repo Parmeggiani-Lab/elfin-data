@@ -1,11 +1,9 @@
 .DS_Store
 
+activate
 .venv
 /elfin/
 elfinpy
 
-/pdb_raw/
-/pdb_prepped/
-/pdb_relaxed/
-/pdb_aligned/
+/pdb_*/
 /obj_aligned/
