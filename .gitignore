@@ -4,6 +4,8 @@ activate
 .venv
 /elfin/
 elfinpy
+misc
+*.temp
 
 /pdb_*/
 /obj_aligned/
