@@ -53,7 +53,7 @@ Decompress the raw PDB dataset:
 
 Preprocess raw PDBs to get prepped PDBs:
 
-`preproecss.py`
+`preprocess.py`
 
 **Preprocess and relax module PDBs**
 `create_relax_list > relax_list.temp`
