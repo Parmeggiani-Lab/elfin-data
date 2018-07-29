@@ -1,5 +1,9 @@
 .DS_Store
 
+.venv
+/elfin/
+elfinpy
+
 /pdb_raw/
 /pdb_prepped/
 /pdb_relaxed/

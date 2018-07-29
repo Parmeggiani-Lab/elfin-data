@@ -1,0 +1,14 @@
+#!/bin/bash
+
+PYTHON=python3
+echo 'Using PYTHON=${PYTHON}'
+
+git clone https://github.com/joy13975/elfin
+
+rm -rf ./elfinpy
+ln -s ./elfin/elfinpy ./elfinpy
+
+virtualenv --python=$PYTHON .venv
+. ./elfin/activate
+
+python3 -m pip install -r elfin/requirements.txt
