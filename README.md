@@ -1,4 +1,4 @@
-# Elfin Data
+# elfin-data
 
 This private repository hosts raw repeat protein atomic models contributed by TJ Brunette, David Baker, and [Fabio Parmeggiani](https://github.com/parmef).
 
@@ -27,7 +27,11 @@ The data here are used in the main [elfin](https://github.com/joy13975/elfin) pr
 
 5. Aligned OBJ Models (`obj_aligned`)
    
-   > OBJ Batch Preprocess (Blender)
+   > Batch Process Operator (Blender Addon [elfin-ui](https://github.com/joy13975/elfin-ui))) 
+   > 1. In the left-hand-side panel, set the Process source folder to the folder that contains `singles`, `doubles`, `hubs` folders, which in turn contain the respective .obj files.
+   > 2. Set the destination path for the output library file.
+   > 3. Hit `Batch process & export`.
+   > 4. Rename it to `library.blend`.
 
 6. Blender Module Library (`library.blend`)
 
