@@ -1,5 +1,6 @@
 .DS_Store
 
+relax_all.sh
 xdb.json
 requirements.txt
 activate
