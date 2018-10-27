@@ -6,38 +6,55 @@ The repository should only be accessible to those who have been granted permissi
 
 The data here are used in the main [elfin](https://github.com/joy13975/elfin) project.
 
+Setup:
+```
+./setup
+```
 
 ## Data Flow
 
-1. Raw PDBs (`pdb_raw`) and Hub Module Metadata (`metadata`)
+First, activate environment:
+```
+. ./activate
+```
 
-   > preprocess.py
+1. With raw PDBs (`pdb_raw`) and Hub Module Metadata (`metadata`)
 
-2. Prepped PDBs (`pdb_prepped`)
+```
+preprocess.py # produces a `pdb_prepped`
+```
 
-   > create_relax_list and Rosetta's relaxation protocol
+2. With prepped PDBs (`pdb_prepped`)
 
-3. Relaxed PDBs (`pdb_relaxed`)
+```
+create_relax_list > relax_all.sh 
+./relax_all.sh # takes a LONG time; creates `pdb_relaxed`
+```
+
+3. With relaxed PDBs (`pdb_relaxed`)
    
-   > dbgen.py
+```
+dbgen.py # creates `pdb_aligned` and `xdb.json`
+```
 
 4. Aligned PDBs (`pdb_aligned`) and Transformation Database (`xdb.json`)
 
-   > batch_convert.py (pymol)
+Run this in pymol:
+```
+batch_convert.py # creates `obj_aligned`
+```
 
-5. Aligned OBJ Models (`obj_aligned`)
+5. With aligned OBJ Models (`obj_aligned`)
    
-   > Batch Process Operator (Blender Addon [elfin-ui](https://github.com/joy13975/elfin-ui))) 
-   > 1. In the left-hand-side panel, set the Process source folder to the folder that contains `singles`, `doubles`, `hubs` folders, which in turn contain the respective .obj files.
-   > 2. Set the destination path for the output library file.
-   > 3. Hit `Batch process & export`.
-   > 4. Rename it to `library.blend`.
+   1. Install [elfin-ui](https://github.com/joy13975/elfin-ui)
+   2. In the left-hand-side panel, set the Process source folder to the folder that contains `singles`, `doubles`, `hubs` folders, which in turn contain the respective .obj files.
+   3. Set the destination path for the output library file.
+   4. Hit `Batch process & export`.
+   5. Rename the output file to `library.blend`.
 
-6. Blender Module Library (`library.blend`)
+Files produces by stages 2, 4, 5, and 6 are absent from this repository because they are either quick to generate or are too massive in size.
 
-Stage 2, 4, 5, and 6 are absent from this repository because they are relatively quick to produce but are massive in size.
-
-`xdb.json` and `library.blend` are publicly hosted at [elfin-library](https://github.com/joy13975/elfin-library).
+`xdb.json` and `library.blend` are hosted at [elfin-library](https://github.com/joy13975/elfin-library).
 
 ## Operating the Data Flow
 
