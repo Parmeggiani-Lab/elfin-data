@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dirs=(pdb_raw pdb_relaxed)
+dirs=(pdb_raw pdb_relaxed pdb_aligned)
 for dir in "${dirs[@]}"
 do
     base=$(basename "$dir")
