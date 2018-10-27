@@ -1,10 +1,12 @@
 .DS_Store
 
+xdb.json
+requirements.txt
 activate
 .venv
-/elfin/
 elfinpy
 misc
+metadata
 *.temp
 
 /pdb_*/

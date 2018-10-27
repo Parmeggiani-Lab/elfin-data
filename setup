@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Exit venv if user did not do so
+if [[ ! -z "$VIRTUAL_ENV" ]]; then
+	echo "You're in virtualenv. Please run deactivate first"
+	exit 1
+fi
+
+PYTHON=python3
+echo "Using PYTHON=${PYTHON}"
+
+rm -rf elfinpy misc metadata activate
+echo 'Fetching files...'
+svn export https://github.com/joy13975/elfin/trunk/elfinpy
+svn export https://github.com/joy13975/elfin/trunk/requirements.txt
+svn export https://github.com/joy13975/elfin/trunk/misc
+svn export https://github.com/joy13975/elfin/trunk/activate
+svn export https://github.com/joy13975/elfin-library/trunk/metadata
+
+venv_dir=".venv"
+if [[ ! -d "$venv_dir" ]]; then
+	virtualenv --python=$PYTHON $venv_dir
+fi
+. ./activate
+
+python3 -m pip install -r requirements.txt
