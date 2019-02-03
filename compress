@@ -1,6 +1,11 @@
 #!/bin/bash
 
-dirs=(pdb_raw pdb_relaxed pdb_aligned)
+if [[ "$#" -gt 0 ]]; then
+	dirs="$1"
+else
+	dirs=(pdb_raw pdb_relaxed pdb_aligned cappings)
+fi
+
 for dir in "${dirs[@]}"
 do
     base=$(basename "$dir")
