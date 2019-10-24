@@ -1,6 +1,6 @@
 # elfin-data
 
-This private repository hosts raw repeat protein atomic models contributed by TJ Brunette, David Baker, and [Fabio Parmeggiani](https://github.com/parmef).
+This private repository hosts raw repeat protein atomic models contributed by TJ Brunette, David Baker, and [Fabio Parmeggiani](https://github.com/parmef) and others were collected from various papers by Leon Obendorf.
 
 The repository should only be accessible to those who have been granted permission from either of the above authors.
 
@@ -27,30 +27,31 @@ preprocess.py # produces a `pdb_prepped`
 2. With prepped PDBs (`pdb_prepped`)
 
 ```
-create_relax_list > relax_all.sh 
-./relax_all.sh # takes a LONG time; creates `pdb_relaxed`
-```
-
-3. With relaxed PDBs (`pdb_relaxed`)
-   
-```
 dbgen.py # creates `pdb_aligned` and `xdb.json`
 ```
 
 4. Aligned PDBs (`pdb_aligned`) and Transformation Database (`xdb.json`)
 
 Run this in pymol:
-```
-batch_convert.py # creates `obj_aligned`
-```
 
+```
+import sys
+sys.path.append('DIRECTORY TO elfin-data')
+cd 'directory to elfin-data'
+
+run pymol_scripts/extensions/batch_convert.py
+
+batch_convert_modules resources/pdb_aligned, ressources/obj_aligned, obj
+
+```
 5. With aligned OBJ Models (`obj_aligned`)
-   
+
    1. Install [elfin-ui](https://github.com/joy13975/elfin-ui)
    2. In the left-hand-side panel, set the Process source folder to the folder that contains `singles`, `doubles`, `hubs` folders, which in turn contain the respective .obj files.
-   3. Set the destination path for the output library file.
+   3. Set the destination path for the output library file and name it `library.blend`.
    4. Hit `Batch process & export`.
-   5. Rename the output file to `library.blend`.
+   5. open the library.blend
+   6. make sure al objects are NOT VISIBLE (click on the small eye in the inspector) -> only then you can avoid a strange error that is happening when adding the first module in a scene!
 
 Files produces by stages 2, 4, 5, and 6 are absent from this repository because they are either quick to generate or are too massive in size.
 
@@ -91,10 +92,10 @@ local=yes variant= release=macosclangrelease sh relax_list.temp
 ```
 
  - The ```local``` variable tells the ```./scripts/Shell/relax.sh``` script whether or not to use ```sbatch```.
- - The ```variant``` variable tells which build variant (e.g. ```mpi``` or ```none``` if default) of Rosetta to use. 
+ - The ```variant``` variable tells which build variant (e.g. ```mpi``` or ```none``` if default) of Rosetta to use.
  - The ```release``` variable tells which release version to use. This depends on your OS, and which build version you want to use (e.g. could be the debug version).
 
-This relaxation can take quite a while simply because the process is computationally intensive. It is therefore strongly recommended that you do this on a compute cluster that lets you spread workload across many machines. 
+This relaxation can take quite a while simply because the process is computationally intensive. It is therefore strongly recommended that you do this on a compute cluster that lets you spread workload across many machines.
 
 **Generating xdb**
 
@@ -103,7 +104,7 @@ After relaxation, you should see a new PDB suffixed with ```_0001.pdb``` for eac
 cp_relaxed_pdbs
 ```
 
-Lastly, generate the xdb by invoking: 
+Lastly, generate the xdb by invoking:
 ```
 dbgen.py
 ```
