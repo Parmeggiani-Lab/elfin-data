@@ -7,15 +7,15 @@ fi
 
 PYTHON=python3
 echo "Using PYTHON=${PYTHON}"
-# link the right repositiories! (link the branches I produce!! )
+# link the right repositiories! (link the branches I produce!! ) my-calc-branch \
 rm -rf elfinpy misc metadata activate
 echo 'Fetching files...'
-svn export https://github.com/joy13975/elfin/tree/Leons-Shortened-Database-Generation/elfinpy
-svn export https://github.com/joy13975/elfin/tree/Leons-Shortened-Database-Generation/requirements.txt
-svn export https://github.com/joy13975/elfin/tree/Leons-Shortened-Database-Generation/misc
-svn export https://github.com/joy13975/elfin/tree/Leons-Shortened-Database-Generation/activate
-svn export https://github.com/Parmeggiani-Lab/elfin-library-darpin/tree/master/metadata
-svn export https://github.com/joy13975/elfin/tree/Leons-Shortened-Database-Generation/pymol_scripts
+svn export https://github.com/joy13975/elfin/branches/Leons-Shortened-Database-Generation/elfinpy
+svn export https://github.com/joy13975/elfin/branches/Leons-Shortened-Database-Generation/requirements.txt
+svn export https://github.com/joy13975/elfin/branches/Leons-Shortened-Database-Generation/misc
+svn export https://github.com/joy13975/elfin/branches/Leons-Shortened-Database-Generation/activate
+svn export https://github.com/Parmeggiani-Lab/elfin-library-darpin/trunk/metadata
+svn export https://github.com/joy13975/elfin/branches/Leons-Shortened-Database-Generation/pymol_scripts
 
 venv_dir=".venv"
 if [[ ! -d "$venv_dir" ]]; then
