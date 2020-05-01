@@ -11,12 +11,12 @@ echo "Using PYTHON=${PYTHON}"
 rm -rf elfinpy misc metadata activate
 echo 'Fetching files...'
 
-svn export https://github.com/Parmeggiani-Lab/elfin/elfinpy
-svn export https://github.com/Parmeggiani-Lab/elfin/requirements.txt
-svn export https://github.com/Parmeggiani-Lab/elfin/misc
-svn export https://github.com/Parmeggiani-Lab/elfin/activate
+svn export https://github.com/Parmeggiani-Lab/elfin/trunk/elfinpy
+svn export https://github.com/Parmeggiani-Lab/elfin/trunk/requirements.txt
+svn export https://github.com/Parmeggiani-Lab/elfin/trunk/misc
+svn export https://github.com/Parmeggiani-Lab/elfin/trunk/activate
 svn export https://github.com/Parmeggiani-Lab/elfin-library-darpin/trunk/metadata
-svn export https://github.com/Parmeggiani-Lab/elfin/pymol_scripts
+svn export https://github.com/Parmeggiani-Lab/elfin/trunk/pymol_scripts
 
 venv_dir=".venv"
 if [[ ! -d "$venv_dir" ]]; then

@@ -3,7 +3,7 @@
 if [[ "$#" -gt 0 ]]; then
 	dirs="$1"
 else
-	dirs=(pdb_raw pdb_relaxed pdb_aligned cappings)
+	dirs=(pdb_raw pdb_prepped pdb_aligned)
 fi
 
 for dir in "${dirs[@]}"
