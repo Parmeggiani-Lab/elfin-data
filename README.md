@@ -46,7 +46,7 @@ cd 'directory to elfin-data'
 
 run pymol_scripts/extensions/batch_convert.py
 
-batch_convert_modules resources/pdb_aligned, ressources/obj_aligned, obj
+batch_convert_modules resources/pdb_aligned, resources/obj_aligned, obj
 
 ```
 5. Create `library.blend` with aligned OBJ Models (`obj_aligned`)
