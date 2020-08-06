@@ -41,7 +41,7 @@ Run this in pymol:
 
 ```
 import sys
-sys.path.append('DIRECTORY TO elfin-data')
+sys.path.append('<DIRECTORY TO elfin-data>')
 cd 'directory to elfin-data'
 
 run pymol_scripts/extensions/batch_convert.py

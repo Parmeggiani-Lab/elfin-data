@@ -4,7 +4,8 @@ if [[ ! -z "$VIRTUAL_ENV" ]]; then
 	echo "You're in virtualenv. Please run deactivate first"
 	exit 1
 fi
-
+#REPO='elfin-library'
+REPO='Library_01'
 PYTHON=python3
 echo "Using PYTHON=${PYTHON}"
 # link the right repositiories! (link the branches I produce!! ) my-calc-branch \
@@ -15,7 +16,7 @@ svn export https://github.com/Parmeggiani-Lab/elfin/trunk/elfinpy
 svn export https://github.com/Parmeggiani-Lab/elfin/trunk/requirements.txt
 svn export https://github.com/Parmeggiani-Lab/elfin/trunk/misc
 svn export https://github.com/Parmeggiani-Lab/elfin/trunk/activate
-svn export https://github.com/Parmeggiani-Lab/Library_01/trunk/metadata
+svn export https://github.com/Parmeggiani-Lab/${REPO}/trunk/metadata
 svn export https://github.com/Parmeggiani-Lab/elfin/trunk/pymol_scripts
 
 venv_dir=".venv"
