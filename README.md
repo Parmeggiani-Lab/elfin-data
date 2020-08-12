@@ -4,7 +4,11 @@ This private repository hosts raw repeat protein atomic models contributed by TJ
 
 The repository should only be accessible to those who have been granted permission from either of the above authors.
 
-[elfin](https://github.com/Parmeggiani-Lab/elfin) requires the data stored in this repository. 
+[elfin](https://github.com/Parmeggiani-Lab/elfin) requires the data stored in this repository and will fetch the resources if needed. 
+
+For using Elfin-UI and Elfin-Data no action is requiered inside this repository. 
+
+The following steps are neccessary for generating a new library (or if new modules were designed that should be included in the library) 
 
 Setup:
 ```
