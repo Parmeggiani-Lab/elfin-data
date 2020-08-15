@@ -8,7 +8,7 @@ The repository should only be accessible to those who have been granted permissi
 
 For using Elfin-UI and Elfin-Data no action is requiered inside this repository. 
 
-The following steps are neccessary for generating a new library (or if new modules were designed that should be included in the library) 
+The following steps are neccessary for generating a new library (or if new modules were designed that should be included in the current library) 
 
 Setup:
 ```
